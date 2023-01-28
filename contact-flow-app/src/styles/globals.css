@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Glysa";
+    src: url("../../public/fonts/Glysa.otf");
+}
+
+@font-face {
+    font-family: "Lexend Deca";
+    src: font-url("../../public/fonts/LexendDeca-VariableFont_wght.ttf");
+}
