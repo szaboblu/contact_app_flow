@@ -36,16 +36,14 @@ export default async function getContacts(
       });
       res.status(200).json({ message: "Contact created" });
     } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: err.message });
+      res.status(500).json({ message: error.message });
     }
   } else if (req.method === "GET") {
     try {
       const contacts = await prisma.contact.findMany();
       res.status(200).json(contacts);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json({ message: err.message });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
     }
   } else {
     res.status(435).end("Method not allowed");

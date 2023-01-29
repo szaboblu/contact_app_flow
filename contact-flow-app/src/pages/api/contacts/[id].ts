@@ -28,7 +28,6 @@ export default async function handleContact(
     });
     res.status(200).json({ message: "Contact updated", contact: contact });
   } else {
-    console.log("Contact could not be modified");
     res.status(400).json({ message: "Contact could not be modified" });
   }
 }
