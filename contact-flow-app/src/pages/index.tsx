@@ -1,5 +1,9 @@
-import { HeadLine, LayoutContainer, ContactList } from "@/components";
-import { useGetContacts, usePostContact } from "@/hooks";
+import {
+  HeadLine,
+  LayoutContainer,
+  ContactList,
+  ContactContainer,
+} from "@/components";
 import Head from "next/head";
 
 export default function Home() {
@@ -11,8 +15,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <LayoutContainer>
+        <HeadLine empty />
         <HeadLine />
-        <ContactList />
+        <ContactContainer />
       </LayoutContainer>
     </>
   );

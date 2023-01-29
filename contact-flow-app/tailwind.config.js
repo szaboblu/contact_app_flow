@@ -31,6 +31,16 @@ module.exports = {
         glysa: ["Glysa", "normal"],
         lexend: ["Lexend Deca", "normal"],
       },
+      gridTemplateColumns: {
+        16: "repeat(16, minmax(0, 1fr))",
+      },
+      gridColumn: {
+        "span-16": "span 16 / span 16",
+        "span-14": "span 14 / span 14",
+      },
+      gridTemplateRows: {
+        auto3: "6rem 6rem auto",
+      },
     },
   },
   plugins: [],
