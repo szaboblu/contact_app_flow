@@ -1,23 +1,35 @@
-import Button from "@/components/common/button";
-import { IDContact } from "@/types";
+import Image from "next/image";
 
-interface ContactButtonListItemProps {
-  contact: IDContact;
-  onEdit: (contact: IDContact) => void;
-  onDelete: (contact: IDContact) => void;
-  onFavorite: (contact: IDContact) => void;
-}
-export const ContactButtonListItem = ({
-  contact,
-  onEdit,
-  onDelete,
-  onFavorite,
-}: ContactButtonListItemProps) => {
+export const ContactButtonListItem = () => {
   return (
-    <div>
-      <Button onClick={() => onEdit(contact)} label="Edit" />
-      <Button onClick={() => onFavorite(contact)} label="Favorite" />
-      <Button onClick={() => onDelete(contact)} label="Delete" />
+    <div className="absolute left-0 w-56 p-0 overflow-hidden rounded-lg top-12 border-1 bg-G-80 ">
+      <button className="flex items-center justify-start w-full gap-3 p-3 hover:bg-G-70">
+        <Image
+          src="/icons/Settings.svg"
+          width={20}
+          height={20}
+          alt={"settings"}
+        />
+        <span className="text-sm">Edit</span>
+      </button>
+      <button className="flex items-center justify-start w-full gap-3 p-3 hover:bg-G-70">
+        <Image
+          src="/icons/Favourite.svg"
+          width={20}
+          height={20}
+          alt={"settings"}
+        />
+        <span className="text-sm">Favourite</span>
+      </button>
+      <button className="flex items-center justify-start w-full gap-3 p-3 hover:bg-G-70">
+        <Image
+          src="/icons/Delete.svg"
+          width={20}
+          height={20}
+          alt={"settings"}
+        />
+        <span className="text-sm">Remove</span>
+      </button>
     </div>
   );
 };

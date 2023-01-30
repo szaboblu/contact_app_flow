@@ -1,5 +1,4 @@
 import { useGetContacts } from "@/hooks";
-import { Contact } from "./contactItem/contact";
 import { LayoutProps, IDContact } from "@/types";
 import { ContactItem } from "@/components";
 import { useState } from "react";
