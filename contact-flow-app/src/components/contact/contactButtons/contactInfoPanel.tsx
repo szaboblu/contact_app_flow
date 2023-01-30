@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Button, ContactButtonListItem } from "@/components";
 import { useState } from "react";
+import { Contact, ContactProps } from "@/types";
 
-export const ContactInfoPanel = () => {
+export const ContactInfoPanel = ({ contact }: ContactProps) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -23,7 +24,7 @@ export const ContactInfoPanel = () => {
               />
             }
           />
-          {modalOpen ? <ContactButtonListItem /> : null}
+          {modalOpen ? <ContactButtonListItem contact={contact} /> : null}
         </div>
       </div>
     </div>

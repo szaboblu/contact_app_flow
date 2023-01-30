@@ -1,11 +1,17 @@
 import { ContactForm } from "@/components";
+import { useDeleteContact } from "@/hooks";
+import { Contact, ContactProps } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
 
-export const ContactButtonListItem = () => {
+export const ContactButtonListItem = ({ contact }: ContactProps) => {
   const [formOpen, setFormOpen] = useState(false);
+  const { deleteContact } = useDeleteContact();
 
-  if (formOpen) return <ContactForm open={formOpen} setOpen={setFormOpen} />;
+  if (formOpen)
+    return (
+      <ContactForm open={formOpen} setOpen={setFormOpen} contact={contact} />
+    );
 
   return (
     <div className="absolute left-0 w-56 p-0 overflow-hidden rounded-lg top-12 border-1 bg-G-80 ">
@@ -36,6 +42,7 @@ export const ContactButtonListItem = () => {
           width={20}
           height={20}
           alt={"settings"}
+          onClick={() => deleteContact(contact)}
         />
         <span className="text-sm">Remove</span>
       </button>

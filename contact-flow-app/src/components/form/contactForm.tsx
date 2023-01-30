@@ -3,20 +3,30 @@ import Image from "next/image";
 import { Dialog } from "@headlessui/react";
 import { ChangeEvent, Fragment, useRef } from "react";
 import { TextField } from "./textField";
-import { useForm } from "@/hooks";
+import { useForm, usePostContact, useUpdateContact } from "@/hooks";
 import { ProfilePicture } from "../contact";
+import { Contact, IDContact } from "@/types";
 
 interface ContactFormProps {
+  contact?: IDContact | Contact;
   open: boolean;
   setOpen: (open: boolean) => void;
 }
 
-export const ContactForm = ({ setOpen, open }: ContactFormProps) => {
-  const { formData, handleInputChange, handleSubmit } = useForm();
+export const ContactForm = ({ setOpen, open, contact }: ContactFormProps) => {
+  const { updateContact } = useUpdateContact();
+  const { postContact } = usePostContact();
+  let action = postContact;
+  if (contact && contact.id) {
+    action = updateContact;
+    // update contact
+  }
+  const { formData, handleInputChange, handleSubmit } = useForm(
+    contact,
+    action
+  );
 
-  console.log(formData);
   const { name, email, phone } = formData;
-
   return (
     <div className="fixed top-0 left-0 w-screen h-screen bg-black/40">
       <Dialog
@@ -84,7 +94,7 @@ export const ContactForm = ({ setOpen, open }: ContactFormProps) => {
               variant="secondary"
               label="Cancel"
             />
-            <Button onClick={() => setOpen(false)} label="Done" />
+            <Button onClick={handleSubmit} label="Done" />
           </div>
         </Dialog.Panel>
       </Dialog>

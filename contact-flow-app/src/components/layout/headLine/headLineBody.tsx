@@ -1,7 +1,12 @@
-import { ProfilePicture, Button } from "@/components";
+import { ProfilePicture, Button, ContactForm } from "@/components";
 import Image from "next/image";
+import { useState } from "react";
 
 export const HeadLineBody = () => {
+  const [formOpen, setFormOpen] = useState(false);
+
+  if (formOpen) return <ContactForm open={formOpen} setOpen={setFormOpen} />;
+
   return (
     <div className="flex items-center justify-between p-5 ">
       <h2 className=" text-base2 leading-normal2 font-glysa">Contacts</h2>
@@ -15,6 +20,7 @@ export const HeadLineBody = () => {
           />
           <ProfilePicture />
           <Button
+            onClick={() => setFormOpen(true)}
             label="Add new"
             icon={
               <Image

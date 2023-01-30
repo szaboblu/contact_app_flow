@@ -17,7 +17,7 @@ export const ContactItem = ({
       className="flex items-center justify-between w-full p-4"
     >
       <Contact contact={contact} />
-      {visited && <ContactInfoPanel />}
+      {visited && <ContactInfoPanel contact={contact} />}
     </button>
   );
 };

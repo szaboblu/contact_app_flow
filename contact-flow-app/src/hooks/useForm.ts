@@ -1,13 +1,15 @@
-import { FormState } from "./../types";
+import { Contact } from "./../types";
 import { useState } from "react";
-
+import { useUpdateContact, usePostContact } from "@/hooks";
 export const useForm = (
-  initialState: FormState = {
+  initialState: Contact = {
     name: "",
     email: "",
     phone: "",
+    picture: "",
+    id: "",
   },
-  onSubmit?: ({}: FormState) => void
+  onSubmit?: ({}: Contact) => void
 ) => {
   const [formData, setFormData] = useState(initialState);
 
@@ -18,8 +20,7 @@ export const useForm = (
   };
 
   const handleSubmit = () => {
-    console.log("submit", formData);
-    onSubmit?.(formData);
+    if (onSubmit) onSubmit?.(formData);
   };
 
   return { formData, handleInputChange, handleSubmit };
