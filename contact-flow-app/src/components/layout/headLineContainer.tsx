@@ -1,5 +1,5 @@
 import { LayoutProps } from "@/types";
-import { SideContainer } from "./sideContainer";
+import { SideContainer, HeadLineBody } from "@/components";
 
 interface HeadLineProps extends LayoutProps {
   empty?: boolean;
@@ -21,7 +21,7 @@ export const HeadLine = ({
     >
       <SideContainer>{leftChild}</SideContainer>
       <div className=" sm:col-span-12 col-span-14 xl:col-span-8 bg-G-100">
-        {!empty ? <h2>Contacts</h2> : null}
+        {!empty ? <HeadLineBody /> : null}
       </div>
       <SideContainer>{rightChild}</SideContainer>
     </div>

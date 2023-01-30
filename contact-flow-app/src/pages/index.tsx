@@ -3,6 +3,8 @@ import {
   LayoutContainer,
   ContactList,
   ContactContainer,
+  RightHeadLineContainer,
+  LeftHeadLineContainer,
 } from "@/components";
 import Head from "next/head";
 
@@ -16,7 +18,10 @@ export default function Home() {
       </Head>
       <LayoutContainer>
         <HeadLine empty />
-        <HeadLine />
+        <HeadLine
+          leftChild={<LeftHeadLineContainer />}
+          rightChild={<RightHeadLineContainer />}
+        />
         <ContactContainer />
       </LayoutContainer>
     </>

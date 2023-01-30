@@ -31,6 +31,12 @@ module.exports = {
         glysa: ["Glysa", "normal"],
         lexend: ["Lexend Deca", "normal"],
       },
+      fontSize: {
+        base2: "2rem",
+      },
+      lineHeight: {
+        normal2: "3rem",
+      },
       gridTemplateColumns: {
         16: "repeat(16, minmax(0, 1fr))",
       },

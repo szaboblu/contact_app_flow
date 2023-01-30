@@ -1,6 +1,7 @@
 import { useGetContacts } from "@/hooks";
 import { Contact } from "./contactItem/contact";
 import { LayoutProps } from "@/types";
+import { ContactItem } from "@/components";
 
 export const ContactList = ({ className = "" }: LayoutProps) => {
   const { contacts, contactsError } = useGetContacts();
@@ -11,10 +12,9 @@ export const ContactList = ({ className = "" }: LayoutProps) => {
 
   if (contacts) {
     return (
-      <div className={"" + className}>
-        <h1>Contact List</h1>
+      <div className={"p-4" + className}>
         {contacts.map((contact) => (
-          <Contact key={contact.id} contact={contact} />
+          <ContactItem key={contact.id} contact={contact} />
         ))}
       </div>
     );

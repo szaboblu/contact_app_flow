@@ -1,15 +1,14 @@
-import { IDContact } from "@/types";
-
-interface ContactProps {
-  contact: IDContact;
-}
+import { ContactProps, IDContact } from "@/types";
+import { ProfilePicture } from "./profilePicture";
 
 export const Contact = ({ contact }: ContactProps) => {
   return (
-    <div>
-      <h2>{contact.name}</h2>
-      <p>{contact.email}</p>
-      <p>{contact.phone}</p>
+    <div className="flex">
+      <ProfilePicture />
+      <div className="pl-3">
+        <h2>{contact.name}</h2>
+        <p className="text-sm opacity-56">{contact.phone}</p>
+      </div>
     </div>
   );
 };

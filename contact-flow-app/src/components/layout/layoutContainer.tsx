@@ -1,5 +1,5 @@
 import { LayoutProps } from "@/types";
-import { HeadLine } from "./headLine";
+import { HeadLine } from "./headLineContainer";
 
 export const LayoutContainer = ({ children, className = "" }: LayoutProps) => {
   return (
