@@ -4,7 +4,7 @@
 //The button is a component that is used in many places in the app. It is a good example of a component that is used in many places and is a good candidate for a component library.
 
 interface ButtonProps {
-  label: string;
+  label?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   icon?: React.ReactNode;
@@ -16,7 +16,7 @@ export const Button = ({
   onClick,
   type = "button",
   icon,
-  variant = "special",
+  variant = "primary",
 }: ButtonProps) => {
   let buttonClass = "flex items-center  p-2  ";
 

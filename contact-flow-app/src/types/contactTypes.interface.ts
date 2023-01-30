@@ -1,5 +1,5 @@
 export interface Contact {
-  id: number;
+  id: string;
   name: string;
   phone: string;
   email: string;
@@ -7,5 +7,5 @@ export interface Contact {
 }
 
 export interface IDContact extends Contact {
-  id: number;
+  id: string;
 }
