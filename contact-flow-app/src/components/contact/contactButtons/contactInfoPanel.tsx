@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export const ContactInfoPanel = () => {
   const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div>
       <div className="flex items-center justify-center space-x-5 ">

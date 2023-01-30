@@ -18,10 +18,10 @@ export const Button = ({
   icon,
   variant = "primary",
 }: ButtonProps) => {
-  let buttonClass = "flex items-center  p-2  ";
+  let buttonClass = "flex items-center  p-3  ";
 
   if (icon && label) {
-    buttonClass += "px-3 gap-2 ";
+    buttonClass += " gap-2 ";
   }
 
   switch (variant) {
